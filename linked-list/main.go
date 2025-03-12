@@ -4,4 +4,6 @@ func main() {
 	println("===\n")
 	runLinkedList()
 	println("\n\n===")
+	runReverseLinkedList()
+	println("\n\n===")
 }
