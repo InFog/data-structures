@@ -16,10 +16,10 @@ func createLinkedList(size int) Node {
 	return root
 }
 
-func getLinkedListLength(head *Node) int {
+func getLinkedListLength(head Node) int {
 	count := 0
 
-	current := head
+	current := &head
 
 	for {
 		count++
@@ -32,8 +32,8 @@ func getLinkedListLength(head *Node) int {
 	return count
 }
 
-func printLinkedList(head *Node) {
-	current := head
+func printLinkedList(head Node) {
+	current := &head
 
 	for {
 		fmt.Printf("%d", current.data)
@@ -48,8 +48,8 @@ func printLinkedList(head *Node) {
 func runLinkedList() {
 	root := createLinkedList(10)
 
-	fmt.Println("Linked List's Lenght: ", getLinkedListLength(&root))
+	fmt.Println("Linked List's Lenght: ", getLinkedListLength(root))
 	fmt.Print("Linked List Items: ")
 
-	printLinkedList(&root)
+	printLinkedList(root)
 }

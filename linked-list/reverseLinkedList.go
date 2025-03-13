@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-func reverseLinkedList(head *Node) Node {
+func reverseLinkedList(head Node) Node {
 	var previous *Node = nil
-	var current *Node = head
+	var current *Node = &head
 	var next *Node = head.next
 
 	for {
@@ -25,10 +25,10 @@ func reverseLinkedList(head *Node) Node {
 func runReverseLinkedList() {
 	root := createLinkedList(10)
 
-	reversed := reverseLinkedList(&root)
+	root = reverseLinkedList(root)
 
-	fmt.Println("Linked List's Lenght: ", getLinkedListLength(&reversed))
+	fmt.Println("Linked List's Lenght: ", getLinkedListLength(root))
 	fmt.Print("Reversed Linked List Items: ")
 
-	printLinkedList(&reversed)
+	printLinkedList(root)
 }
